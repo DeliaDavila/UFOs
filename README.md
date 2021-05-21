@@ -50,7 +50,7 @@ Here are some recommendations for further development.
 * “Clear Search” button
     * Allows users to correct mistakes
     * Returns user to unfiltered table
-    * Empties the filter searches
+    * Empties previous searches
 
 * Improve fuzzy matches
     * Allow for different capitalizations so searches “Fresno”, “fresno”, and “FRESNO” all return the same sightings
