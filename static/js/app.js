@@ -59,46 +59,29 @@ function updateFilters() {
       delete filters[filterID];
     }
 
-    console.log("a change:");
-    console.log(filters);
-    //return filters;
-
     // 6. Call function to apply all filters and rebuild the table
-    //filterTable();
-    filterTable(filters);
+    filterTable();
+    // filterTable(filters);
+
     //"unreachable code" because call came after "return", which ends the function
   }
 
-//function filterTable() {
-function filterTable(filters) {
+function filterTable() {
 
   console.log("in filterTable func");
   let filteredData = tableData;
-    Object.entries(filters).forEach(function([key, value]) {
-      console.log(`Key: ${key}`);
-      console.log(`value: ${value}`); 
+    // Object.entries(filters).forEach(function([key, value]) {
 
+    Object.entries(filters).forEach(([key, value])=> {
 
-      //filteredDataTest = filteredData.filter(entry => entry.key);
-      //filteredDataTest = filteredData.filter(entry => entry.key = filter.key);
-      //filteredDataTest = filteredData.filter(entry => entry.value = filter.value);
-      //filteredDataTest = filteredData.filter(entry => entry.value = value);
+      console.log(filters);
 
-      //this doesn't work: Ask tutur about why brackets are used here instead of dot notation. So confused!
-      //filteredDataTest = filteredData.filter(entry => entry.key === value);
-
-      filteredDataTest = filteredData.filter(entry => entry[key] === value);
+      // console.log(filteredDataTest); 
+      filteredData = filteredData.filter(entry => entry[key] === value);
             
-      //how do you console log within an anonymous function?
-            //console.log(`entry/key with bracket: ${entry[key]}`); 
-           // console.log(`entry/key with dot: ${entry.key}`); 
+    });
 
-      //const result = words.filter(word => word.length > 6);
-
-
-      buildTable(filteredDataTest);
-   
-    })
+    buildTable(filteredData);
 };
 
 
